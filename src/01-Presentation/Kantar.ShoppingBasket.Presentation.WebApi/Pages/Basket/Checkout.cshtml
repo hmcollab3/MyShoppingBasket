@@ -1,0 +1,67 @@
+﻿@page
+@model Kantar.ShoppingBasket.Presentation.WebApi.Pages.Basket.CheckoutModel
+
+<h2>Checkout</h2>
+
+@if (!string.IsNullOrEmpty(Model.CheckoutMessage))
+{
+    <div class="alert alert-info">@Model.CheckoutMessage</div>
+}
+
+<form method="post" asp-page-handler="Purchase">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price (per unit)</th>
+                <th>Currency</th>
+                <th>Quantity</th>
+                <th>Direct Discount</th>
+                <th>Direct Discount Quantity</th>
+                <th>Multi Buy Discount Savings</th>
+                <th>Multi Buy affected products</th>
+                <th>Total Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.BasketItems == null || Model.BasketItems.Count == 0)
+            {
+                <tr>
+                    <td colspan="9">
+                        <span class="text-info">Your basket is empty.</span>
+                    </td>
+                </tr>
+            }
+            else
+            {
+                foreach (var item in Model.BasketItems)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Price.ToString("F2")</td>
+                        <td>@item.Currency</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.Discount.ToString("F2")</td>
+                        <td>@(item.Discount == 0 ? 0 : item.Quantity - (item.MultiBuyDiscountSavings?.DiscountedItemCount ?? 0))</td>
+                        <td>@(item.MultiBuyDiscountSavings?.TotalSavings.ToString("F2") ?? 0.ToString())</td>
+                        <td>@(item.MultiBuyDiscountSavings?.DiscountedItemCount ?? 0)</td>
+                        <td class="fw-bold">@item.TotalCost.ToString("F2")</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+    @if (Model.BasketItems != null && Model.BasketItems.Count > 0)
+    {
+        <div class="mb-3 mt-4">
+            <strong>Total:</strong> @Model.TotalCost.ToString("F2") @Model.Currency
+        </div>
+        <button type="submit" class="btn btn-success">Purchase</button>
+    }
+</form>
+@if (Model.BasketItems != null && Model.BasketItems.Count > 0)
+{
+    <div class="mt-4">
+        <a class="btn btn-secondary" href="/Products/ProductListing">Back to Products</a>
+    </div>
+}

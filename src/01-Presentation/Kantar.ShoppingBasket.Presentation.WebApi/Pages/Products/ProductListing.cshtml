@@ -1,0 +1,62 @@
+﻿@page
+@model ProductListingModel
+
+<h2>Product Listing</h2>
+
+@if (!string.IsNullOrEmpty(Model.AddToBasketMessage))
+{
+    <div class="alert alert-info">@Model.AddToBasketMessage</div>
+}
+
+<form method="post" asp-page-handler="AddToBasket">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Currency</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Products == null || Model.Products.Count == 0)
+            {
+                <tr>
+                    <td colspan="4">
+                        <span class="text-info">No products available for this country.</span>
+                    </td>
+                </tr>
+            }
+            else
+            {
+                var idx = 0;
+                foreach (var kvp in Model.Products)
+                {
+                    var product = kvp.Key;
+                    var quantity = kvp.Value;
+                    <tr>
+                        <td>@product.Name</td>
+                        <td>@product.BasePrice.ToString("F2")</td>
+                        <td>@product.Currency</td>
+                        <td>
+                            <input type="number" min="0" name="Quantities[@idx]" value="@quantity" class="form-control" />
+                            <input type="hidden" name="ProductIds[@idx]" value="@product.Id" />
+                        </td>
+                    </tr>
+                    idx++;
+                }
+            }
+        </tbody>
+    </table>
+    @if (Model.Products != null && Model.Products.Count > 0)
+    {
+        <button type="submit" class="btn btn-primary">Add to Basket</button>
+    }
+</form>
+@if (Model.Products != null && Model.Products.Count > 0)
+{
+    <div class="mt-4">
+        <a class="btn btn-success me-2" href="/Basket/Checkout">Checkout</a>
+        <a class="btn btn-secondary" href="/Basket/History">History</a>
+    </div>
+}

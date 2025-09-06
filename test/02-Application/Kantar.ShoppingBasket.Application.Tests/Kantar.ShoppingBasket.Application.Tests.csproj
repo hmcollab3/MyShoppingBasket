@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <EnableMSTestRunner>true</EnableMSTestRunner>
+    <OutputType>Exe</OutputType>
+    <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoFixture" Version="4.18.1" />
+    <PackageReference Include="FluentAssertions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageReference Include="Microsoft.Testing.Extensions.CodeCoverage" Version="17.12.6" />
+    <PackageReference Include="Microsoft.Testing.Extensions.TrxReport" Version="1.4.3" />
+    <PackageReference Include="Moq" Version="4.20.72" />
+    <PackageReference Include="MSTest" Version="3.6.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\02-Application\Kantar.ShoppingBasket.Application\Kantar.ShoppingBasket.Application.csproj" />
+    <ProjectReference Include="..\..\..\src\03-Domain\Kantar.ShoppingBasket.Domain\Kantar.ShoppingBasket.Domain.csproj" />
+    <ProjectReference Include="..\..\..\src\04-Data\Kantar.ShoppingBasket.Data\Kantar.ShoppingBasket.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
+  </ItemGroup>
+
+</Project>

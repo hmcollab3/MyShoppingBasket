@@ -1,0 +1,53 @@
+﻿@inject IHttpClientFactory HttpClientFactory
+@inject IConfiguration Configuration
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@using Kantar.ShoppingBasket.Presentation.WebApi.Model
+@{
+    var baseUri = Configuration["ApiSettings:BaseUrl"];
+    var client = HttpClientFactory.CreateClient();
+    var countries = await client.GetFromJsonAsync<IEnumerable<CountryModel>>($"{baseUri}/api/country/getall");
+    var selectedCountryId = HttpContextAccessor.HttpContext?.Request.Cookies["CountryId"];
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Kantar ShoppingBasket</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Kantar.ShoppingBasket.Presentation.WebApi.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">Kantar ShoppingBasket</a>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <div class="d-flex align-items-center ms-auto">
+                        @await Html.PartialAsync("_CountrySelector", (countries, selectedCountryId))
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - Kantar ShoppingBasket - <a asp-area="" asp-page="/Readme">Readme</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

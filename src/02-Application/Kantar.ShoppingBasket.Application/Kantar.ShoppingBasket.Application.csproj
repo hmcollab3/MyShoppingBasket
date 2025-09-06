@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="15.0.1" />
+    <PackageReference Include="PDFsharp" Version="6.2.1" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.7.1" />
+    <PackageReference Include="VaultSharp" Version="1.17.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\03-Domain\Kantar.ShoppingBasket.Domain\Kantar.ShoppingBasket.Domain.csproj" />
+    <ProjectReference Include="..\..\05-CrossCutting\Kantar.ShoppingBasket.CrossCutting\Kantar.ShoppingBasket.CrossCutting.csproj" />
+  </ItemGroup>
+
+</Project>

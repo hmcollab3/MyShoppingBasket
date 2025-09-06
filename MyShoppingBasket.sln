@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FECFBBEC-4B2D-4CD0-A945-EA8243AEDC00}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Presentation", "01-Presentation", "{43EA0930-FF77-4121-B4D8-1236401980B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{6ED38F98-1F89-4152-98B5-5AAB9DAFAB14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kantar.DatabaseScriptRunner", "tools\Kantar.DatabaseScriptRunner\Kantar.DatabaseScriptRunner\Kantar.DatabaseScriptRunner.csproj", "{F47BC059-6721-4799-BAD4-84C88C702515}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-Application", "02-Application", "{425A38D4-8263-430C-9FFA-1C149AFDE2BF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-Domain", "03-Domain", "{D39184F0-DD3D-446A-99B9-E3F7C20A43F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04-Data", "04-Data", "{61BD8133-85CE-44FE-A39C-A1BD8DE05E4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kantar.ShoppingBasket.Presentation.WebApi", "src\01-Presentation\Kantar.ShoppingBasket.Presentation.WebApi\Kantar.ShoppingBasket.Presentation.WebApi.csproj", "{8A7DC3F4-0020-49D4-A931-C70AC05CC16D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kantar.ShoppingBasket.Application", "src\02-Application\Kantar.ShoppingBasket.Application\Kantar.ShoppingBasket.Application.csproj", "{18CDF88D-7344-48B8-9CA8-7BBD04048473}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kantar.ShoppingBasket.Data", "src\04-Data\Kantar.ShoppingBasket.Data\Kantar.ShoppingBasket.Data.csproj", "{CD9036D7-EDF5-4116-8CD0-4FA2BCED01F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kantar.ShoppingBasket.Domain", "src\03-Domain\Kantar.ShoppingBasket.Domain\Kantar.ShoppingBasket.Domain.csproj", "{13A44BE5-C90E-40B2-9F4C-980F5266FAFC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-Application", "02-Application", "{7F5295C4-3E19-46F0-9735-7916D7E19029}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kantar.ShoppingBasket.Application.Tests", "test\02-Application\Kantar.ShoppingBasket.Application.Tests\Kantar.ShoppingBasket.Application.Tests.csproj", "{56DCD8BA-8D7D-4A29-A709-D1B6FC2B6A1A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05-CrossCutting", "05-CrossCutting", "{A8E71E49-3664-470B-AEC8-923652130541}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kantar.ShoppingBasket.CrossCutting", "src\05-CrossCutting\Kantar.ShoppingBasket.CrossCutting\Kantar.ShoppingBasket.CrossCutting.csproj", "{8F143671-ADBE-4986-8AE5-D6C555E8F46E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F47BC059-6721-4799-BAD4-84C88C702515}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F47BC059-6721-4799-BAD4-84C88C702515}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F47BC059-6721-4799-BAD4-84C88C702515}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F47BC059-6721-4799-BAD4-84C88C702515}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A7DC3F4-0020-49D4-A931-C70AC05CC16D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A7DC3F4-0020-49D4-A931-C70AC05CC16D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A7DC3F4-0020-49D4-A931-C70AC05CC16D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A7DC3F4-0020-49D4-A931-C70AC05CC16D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18CDF88D-7344-48B8-9CA8-7BBD04048473}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18CDF88D-7344-48B8-9CA8-7BBD04048473}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18CDF88D-7344-48B8-9CA8-7BBD04048473}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18CDF88D-7344-48B8-9CA8-7BBD04048473}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD9036D7-EDF5-4116-8CD0-4FA2BCED01F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD9036D7-EDF5-4116-8CD0-4FA2BCED01F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD9036D7-EDF5-4116-8CD0-4FA2BCED01F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD9036D7-EDF5-4116-8CD0-4FA2BCED01F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13A44BE5-C90E-40B2-9F4C-980F5266FAFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13A44BE5-C90E-40B2-9F4C-980F5266FAFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13A44BE5-C90E-40B2-9F4C-980F5266FAFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13A44BE5-C90E-40B2-9F4C-980F5266FAFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56DCD8BA-8D7D-4A29-A709-D1B6FC2B6A1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56DCD8BA-8D7D-4A29-A709-D1B6FC2B6A1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56DCD8BA-8D7D-4A29-A709-D1B6FC2B6A1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56DCD8BA-8D7D-4A29-A709-D1B6FC2B6A1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F143671-ADBE-4986-8AE5-D6C555E8F46E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F143671-ADBE-4986-8AE5-D6C555E8F46E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F143671-ADBE-4986-8AE5-D6C555E8F46E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F143671-ADBE-4986-8AE5-D6C555E8F46E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{43EA0930-FF77-4121-B4D8-1236401980B9} = {FECFBBEC-4B2D-4CD0-A945-EA8243AEDC00}
+		{F47BC059-6721-4799-BAD4-84C88C702515} = {6ED38F98-1F89-4152-98B5-5AAB9DAFAB14}
+		{425A38D4-8263-430C-9FFA-1C149AFDE2BF} = {FECFBBEC-4B2D-4CD0-A945-EA8243AEDC00}
+		{D39184F0-DD3D-446A-99B9-E3F7C20A43F5} = {FECFBBEC-4B2D-4CD0-A945-EA8243AEDC00}
+		{61BD8133-85CE-44FE-A39C-A1BD8DE05E4F} = {FECFBBEC-4B2D-4CD0-A945-EA8243AEDC00}
+		{8A7DC3F4-0020-49D4-A931-C70AC05CC16D} = {43EA0930-FF77-4121-B4D8-1236401980B9}
+		{18CDF88D-7344-48B8-9CA8-7BBD04048473} = {425A38D4-8263-430C-9FFA-1C149AFDE2BF}
+		{CD9036D7-EDF5-4116-8CD0-4FA2BCED01F7} = {61BD8133-85CE-44FE-A39C-A1BD8DE05E4F}
+		{13A44BE5-C90E-40B2-9F4C-980F5266FAFC} = {D39184F0-DD3D-446A-99B9-E3F7C20A43F5}
+		{7F5295C4-3E19-46F0-9735-7916D7E19029} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{56DCD8BA-8D7D-4A29-A709-D1B6FC2B6A1A} = {7F5295C4-3E19-46F0-9735-7916D7E19029}
+		{A8E71E49-3664-470B-AEC8-923652130541} = {FECFBBEC-4B2D-4CD0-A945-EA8243AEDC00}
+		{8F143671-ADBE-4986-8AE5-D6C555E8F46E} = {A8E71E49-3664-470B-AEC8-923652130541}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {99E36AB7-FBA6-40E5-A7AE-815900870DE1}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,15 @@
+IF NOT EXISTS (
+    SELECT * 
+    FROM INFORMATION_SCHEMA.TABLES 
+    WHERE TABLE_SCHEMA = 'Kantar' 
+      AND TABLE_NAME = 'Country'
+)
+BEGIN
+    CREATE TABLE [Kantar].[Country] (
+        Id INT IDENTITY(1,1),
+        Name NVARCHAR(64) NOT NULL,
+        ISO3166 NVARCHAR(2) NOT NULL,
+        CreationDateUtc DATETIME NOT NULL CONSTRAINT [DF_Country_CreationDateUtc] DEFAULT (SYSDATETIMEOFFSET()),
+        CONSTRAINT [PK_Country] PRIMARY KEY([Id]),
+    );
+END

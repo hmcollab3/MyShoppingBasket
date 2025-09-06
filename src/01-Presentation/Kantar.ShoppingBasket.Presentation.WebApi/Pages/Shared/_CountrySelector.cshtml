@@ -1,0 +1,22 @@
+﻿@model (IEnumerable<Kantar.ShoppingBasket.Presentation.WebApi.Model.CountryModel>, string)
+
+@{
+    var countries = Model.Item1;
+    var selectedCountryId = Model.Item2;
+}
+
+<form id="countrySelectorForm" method="post" asp-page="/Handler/SetCountry" class="d-inline ms-3">
+    <select name="country" class="form-select form-select-sm" onchange="document.getElementById('countrySelectorForm').submit()">
+        @foreach (var country in countries)
+        {
+            if (country.Id.ToString() == selectedCountryId)
+            {
+                <option value="@country.Id" selected>@country.CountryIsoCode</option>
+            }
+            else
+            {
+                <option value="@country.Id">@country.CountryIsoCode</option>
+            }
+        }
+    </select>
+</form>

@@ -1,0 +1,62 @@
+# .NET build files
+bin/
+obj/
+out/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio cache files
+.vs/
+.vscode/
+
+# Rider cache files
+.idea/
+
+# Test results
+TestResults/
+*.trx
+*.coverage
+*.coveragejson
+
+# Logs
+*.log
+
+# NuGet packages
+*.nupkg
+.nuget/
+packages/
+# Uncomment if you have a global packages folder:
+# %USERPROFILE%\.nuget\packages\
+
+# Dotnet publish files
+publish/
+*.Publish.xml
+
+# ASP.NET temp files
+wwwroot/dist/
+wwwroot/node_modules/
+node_modules/
+
+# Environment secrets
+.env
+
+# Docker artifacts
+**/Dockerfile
+**/docker-compose.yml
+**/docker-compose.*.yml
+
+# Fonts and resources (if generated)
+Resources/Fonts/*.ttf
+
+# Others
+*.DS_Store
+*.pdb
+*.cache
+*.pidb
+*.mdb
+*.dbmdl
+
+# Ignore files from migrations (optional, if you use EF Core)
+Migrations/
